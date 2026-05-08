@@ -1,0 +1,12 @@
+1. npm create vite@latest
+
+2. name : mega-sale
+framework : react
+varient : js
+
+3. cd mega-sale
+npm install
+npm run dev
+
+4. run on:
+ http://localhost:5173/
