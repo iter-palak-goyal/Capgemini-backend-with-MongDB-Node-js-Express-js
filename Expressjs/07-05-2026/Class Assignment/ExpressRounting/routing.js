@@ -4,11 +4,11 @@ const app = express();
 let users = [
     {
         id: 1,
-        "name": "srishti"
+        "name": "Palak"
     },
     {
         id: 2,
-        "name": "isha"
+        "name": "ishani"
     }
 ]
 
@@ -39,27 +39,28 @@ app.post("/users", (req, res) => {
 //     users.push(user);
 //     res.status(200).json(users);
 // })
+
 //PUT
-// app.put("/users/:id", (req, res) => {
-//     const id = parseInt(req.params.id);
-//     const updatedUser = req.body;
-//     users = users.map((user) =>
-//         user.id === id ? updatedUser : user
-//     );
-//     res.status(200).json(users);
-// });
+app.put("/users/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const updatedUser = req.body;
+    users = users.map((user) =>
+        user.id === id ? updatedUser : user
+    );
+    res.status(200).json(users);
+});
 
 // PUT using ternary operator + map()
 // send id in body
-app.put("/users", (req, res) => {
-  users = users.map((user) =>
-    user.id === req.body.id ? { ...user, ...req.body } : user,
-  );
-  res.status(200).json({
-    message: "User updated",
-    users,
-  });
-});
+// app.put("/users", (req, res) => {
+//   users = users.map((user) =>
+//     user.id === req.body.id ? { ...user, ...req.body } : user,
+//   );
+//   res.status(200).json({
+//     message: "User updated",
+//     users,
+//   });
+// });
 
 // PATCH using ternary operator + map()
 // send id in body
